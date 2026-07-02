@@ -77,6 +77,7 @@ sql_project/
 
 
 **🚀 Features**
+```bash
 Convert natural language → SQL
 Execute SQL queries on database
 Upload CSV / Excel files
@@ -84,6 +85,7 @@ Support multiple tables
 Query validation (security layer)
 Basic frontend interface
 API-based architecture
+```
 
 **📦 Installation & Setup**
 1. Clone repository
@@ -101,19 +103,22 @@ pip install -r requirements.txt
 python app.py
 
 **🧪 Example API Endpoints**
+```bash
 POST /ask → Convert NL to SQL and return results
 POST /upload → Upload CSV/Excel files
 GET /tables → View database tables
 GET /history → Query history
+```
 
 **📈 Future Improvements**
+```bash
 Support for JOIN queries
 Subqueries & window functions
 Multi-database support
 SQL explanation feature
 User authentication
 Chat-like UI interface
-
+```
 
 **👨‍💻 Author**
 

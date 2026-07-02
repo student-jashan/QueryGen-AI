@@ -13,7 +13,7 @@ This project allows users to interact with a database using simple English queri
 > Show all employees earning more than 70000
 
 **Generated SQL:**
-```sql
+
 SELECT * FROM employees WHERE salary > 70000;
 
 **🏗️ System Architecture**

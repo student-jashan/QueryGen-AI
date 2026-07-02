@@ -75,8 +75,8 @@ sql_project/
 └── README.md
 ```
 
+## 🚀 Features
 
-**🚀 Features**
 ```bash
 Convert natural language → SQL
 Execute SQL queries on database
@@ -87,22 +87,36 @@ Basic frontend interface
 API-based architecture
 ```
 
-**📦 Installation & Setup**
-1. Clone repository
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone repository
+```bash
 git clone https://github.com/your-username/sql_project.git
 cd sql_project
+```
 
-2. Create virtual environment
+### 2. Create virtual environment
+```bash
 python -m venv venv
 source venv/bin/activate
+```
 
-3. Install dependencies
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
+```
 
-4. Run project
+### 4. Run project
+```bash
 python app.py
+```
 
-**🧪 Example API Endpoints**
+---
+
+## 🧪 Example API Endpoints
+
 ```bash
 POST /ask → Convert NL to SQL and return results
 POST /upload → Upload CSV/Excel files
@@ -110,7 +124,10 @@ GET /tables → View database tables
 GET /history → Query history
 ```
 
-**📈 Future Improvements**
+---
+
+## 📈 Future Improvements
+
 ```bash
 Support for JOIN queries
 Subqueries & window functions

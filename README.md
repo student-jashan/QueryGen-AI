@@ -41,8 +41,9 @@ SQLite / PostgreSQL
 OpenAI API / LLM Model
 HTML, CSS, JavaScript (Frontend)
 
+** 📁 Project Structure**
 
-**📁 Project Structure**
+
 sql_project/
 │
 ├── app.py

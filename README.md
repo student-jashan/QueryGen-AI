@@ -121,7 +121,6 @@ python app.py
 POST /ask → Convert NL to SQL and return results
 POST /upload → Upload CSV/Excel files
 GET /tables → View database tables
-GET /history → Query history
 ```
 
 ---

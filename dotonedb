@@ -1,0 +1,9 @@
+jashan@fedora:~/Documents$ cd sql_project
+jashan@fedora:~/Documents/sql_project$ ls database
+app.db  database.py  __pycache__
+jashan@fedora:~/Documents/sql_project$ sqlite3 database/app.db
+SQLite version 3.50.2 2025-06-28 14:00:48
+Enter ".help" for usage hints.
+sqlite> .tables
+BigMart Sales  loanapproval 
+sqlite> .schema loanapproval

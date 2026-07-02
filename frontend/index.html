@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NL2SQL · AI Assistant</title>
+  <!-- Google Font (Inter + Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app-wrapper">
+
+  <!-- NAVBAR -->
+  <header class="navbar glass">
+    <div class="logo">
+      <i class="fas fa-robot"></i>
+      <h2>NL2SQL · Nebula</h2>
+    </div>
+    <div class="nav-right">
+      <span class="status-pulse">
+        <span class="pulse-dot"></span>
+        <span>Backend live</span>
+      </span>
+      <span style="opacity:0.4;">|</span>
+      <span><i class="far fa-circle" style="color:#6b7aa3; font-size:10px;"></i> v2.0</span>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <!-- GRID -->
+  <div class="grid-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- upload -->
+      <div class="card">
+        <h3><i class="fas fa-cloud-upload-alt"></i> Upload Dataset</h3>
+        <div class="file-input-wrapper">
+          <input type="file" id="fileInput" accept=".csv,.xlsx,.xls">
+        </div>
+        <button class="btn btn-primary" id="uploadBtn"><i class="fas fa-arrow-up"></i> Upload</button>
+        <div id="uploadStatus"></div>
+      </div>
+
+      <!-- dataset info -->
+      <div class="card">
+        <h3><i class="fas fa-database"></i> Dataset</h3>
+        <div id="datasetName" style="font-weight:500; color:#b4c0e6; margin-bottom:10px;">—</div>
+        <div class="info-grid">
+          <div class="info-item"><span class="label">Rows</span><div class="value primary" id="rowCount">—</div></div>
+          <div class="info-item"><span class="label">Columns</span><div class="value primary" id="columnCount">—</div></div>
+        </div>
+      </div>
+
+      <!-- history -->
+      <div class="card">
+        <h3><i class="fas fa-clock"></i> History</h3>
+        <ul id="historyList" style="max-height:200px; overflow-y:auto; padding-right:4px;"></ul>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- ask -->
+      <section class="card">
+        <h3 style="margin-bottom:6px;"><i class="fas fa-comment-dots"></i> Ask your data</h3>
+        <textarea id="questionInput" rows="2" placeholder="e.g. Show all approved loans with income > 5000"></textarea>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="askBtn"><i class="fas fa-paper-plane"></i> Ask AI</button>
+          <button class="btn btn-secondary" id="clearBtn"><i class="fas fa-undo-alt"></i> Clear</button>
+        </div>
+      </section>
+
+      <!-- loading -->
+      <section id="loadingSection" class="loading hidden">
+        <div class="loader"></div>
+        <h3 style="font-weight:400; color:#b4c0e6;">Generating SQL …</h3>
+      </section>
+
+      <!-- SQL output -->
+      <section class="card">
+        <div class="sql-header">
+          <h2><i class="fas fa-code"></i> Generated SQL</h2>
+          <button class="copy-btn" id="copySqlBtn"><i class="fas fa-copy"></i> Copy</button>
+        </div>
+        <pre id="sqlOutput">Waiting for question…</pre>
+      </section>
+
+      <!-- result table -->
+      <section class="card">
+        <div class="title-row">
+          <h2><i class="fas fa-table"></i> Query Result</h2>
+          <span id="resultCount">0 Records</span>
+        </div>
+        <div class="table-wrapper">
+          <table id="resultTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <i class="fas fa-bolt" style="color:#6b7aa3; margin-right:6px;"></i> NL2SQL · FastAPI · SQLite · Mistral AI
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
